@@ -38,10 +38,10 @@ case "$log" in
   *#minor* ) part="minor";;
   *#patch* ) part="patch";;
   *#skip* ) part="skip";;
-  *bumpVersion: major* ) part="major";;
-  *bumpVersion: minor* ) part="minor";;
-  *bumpVersion: patch* ) part="patch";;
-  *bumpVersion: skip* ) part="skip";;
+  *bumpVersion:\ major* ) part="major";;
+  *bumpVersion:\ minor* ) part="minor";;
+  *bumpVersion:\ patch* ) part="patch";;
+  *bumpVersion:\ skip* ) part="skip";;
   * ) part="$default_semvar_bump";;
 esac
 
