@@ -1,11 +1,6 @@
-# github-bumpversion-action
+# GitHub bumpversion Action
 
 A Github Action to use the [bumpversion](https://pypi.org/project/bumpversion/) application to bump and tag branches
-
-![Lint Status](https://github.com/jaumann/github-bumpversion-action/workflows/Lint%20Code%20Base/badge.svg)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/jaumann/github-bumpversion-action?label=Github%20Release)](https://github.com/jaumann/github-bumpversion-action/releases)
-[![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/jaumann/github-bumpversion-action?sort=semver&label=Docker%20Version)](https://hub.docker.com/r/jaumann/github-bumpversion-action)
-[![License](https://img.shields.io/github/license/jaumann/github-bumpversion-action)](LICENSE)
 
 ## Usage
 
@@ -21,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Bump version and push tag
-        uses: jaumann/github-bumpversion-action@v0.0.7
+        uses: zefr-inc/github-bumpversion-action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Push changes
@@ -48,8 +43,6 @@ jobs:
 * **old_tag** - The value of the previous tag.
 * **part** - The part of version which was bumped.
 
-> ***Note:*** This action creates a [lightweight tag](https://developer.github.com/v3/git/refs/#create-a-reference).
-
 ### Bumping
 
 **Manual Bumping:** Any commit message that includes `#major`, `#minor`, or `#patch` will trigger the respective version bump. If two or more are present, the highest-ranking one will take precedence.
@@ -62,7 +55,6 @@ jobs:
 
 * Add this action to your repo
 * Setup a .bumpversion.cfg file in the root of your repo
-  * Note: See the [.bumpversion.cfg](.bumpversion.cfg) in this repo for an example
 * Commit some changes
 * Either push to master or open a PR
 * On push (or merge) to `master`, the action will:
@@ -71,4 +63,4 @@ jobs:
 
 ### Credits
 
-[anotherNick/github-tag-action](https://github.com/anothrNick/github-tag-action/) - I used this repo extensively as a base for this project
+[github-bumpversion-action](https://github.com/ZEFR-INC/github-bumpversion-action) - Reference action
