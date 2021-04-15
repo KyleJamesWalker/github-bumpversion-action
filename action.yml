@@ -1,6 +1,6 @@
-name: 'Github Bumpversion Action'
+name: 'Github bumpversion Action'
 description: 'Use the bumpversion utility in a Github Action'
-author: 'Jon Aumann'
+author: 'Zefr'
 runs:
   using: 'docker'
   image: 'Dockerfile'

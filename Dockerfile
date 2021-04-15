@@ -1,7 +1,7 @@
 FROM python:3-alpine
-LABEL maintainer="Jon Aumann"
-LABEL repository="https://github.com/jaumann/github-bumpversion-action"
-LABEL homepage="https://github.com/jaumann/github-bumpversion-action"
+LABEL maintainer="Zefr"
+LABEL repository="https://github.com/ZEFR-INC/github-bumpversion-action"
+LABEL homepage="https://github.com/ZEFR-INC/github-bumpversion-action"
 
 # Install our pre-reqs
 RUN apk add --no-cache git bash curl jq

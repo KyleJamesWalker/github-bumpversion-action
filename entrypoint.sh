@@ -37,8 +37,19 @@ case "$log" in
   *#major* ) part="major";;
   *#minor* ) part="minor";;
   *#patch* ) part="patch";;
+  *#skip* ) part="skip";;
+  *bumpVersion: major* ) part="major";;
+  *bumpVersion: minor* ) part="minor";;
+  *bumpVersion: patch* ) part="patch";;
+  *bumpVersion: skip* ) part="skip";;
   * ) part="$default_semvar_bump";;
 esac
+
+# Stop tag creation if skip has been set
+if [ "$part" = "skip" ]; then
+  echo "bumpversion is set to skip. Exiting..."
+  exit 0
+fi
 
 # check if new version is already specified
 if [ -z "$new_version" ]; then
