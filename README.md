@@ -45,9 +45,11 @@ jobs:
 
 ### Bumping
 
-**Manual Bumping:** Any commit message that includes `#major`, `#minor`, or `#patch` will trigger the respective version bump. If two or more are present, the highest-ranking one will take precedence.
-
-**Automatic Bumping:** If no `#major`, `#minor` or `#patch` tag is contained in the commit messages, it will bump whichever `DEFAULT_BUMP` is set to (which is `patch` by default).
+To set the bump type simply add [bumpVersion: xxx] to your PR title with `xxx` being one of the following:
+* major
+* minor
+* patch
+* skip
 
 > ***Note:*** This action **will not** bump the tag if the `HEAD` commit has already been tagged.
 
@@ -56,9 +58,9 @@ jobs:
 * Add this action to your repo
 * Setup a .bumpversion.cfg file in the root of your repo
 * Commit some changes
-* Either push to master or open a PR
-* On push (or merge) to `master`, the action will:
-  * Bump current tag with patch version unless any commit message contains `#major` or `#minor`
+* Open a PR and set bumpVersion in the title
+* On merge to `master`, the action will:
+  * Bump current tag
   * Bump the version of any files specified in the .bumpversion.cfg file
 
 ### Credits
